@@ -525,8 +525,10 @@ footer .brand-name{font-size:18px}
         <img src="assets/anima-avatar.png" alt="Anima 头像">
       </div>
       <h2 class="serif">把她接回家</h2>
-      <p>Windows 10 / 11，本地优先，下载后即可安装。</p>
-      <a class="btn btn-gold" data-mag href="https://github.com/chengshi0213-gif/anima-site/releases/latest/download/Anima_1.1.0_x64-setup.exe">下载 Anima</a>
+      <p id="dl-desc">Windows 10 / 11，本地优先，下载后即可安装。</p>
+      <div id="dl-actions">
+        <a class="btn btn-gold" data-mag href="https://github.com/chengshi0213-gif/anima-site/releases/latest/download/Anima_1.1.0_x64-setup.exe">下载 Anima</a>
+      </div>
     </div>
   </section>
 </main>
@@ -546,7 +548,7 @@ footer .brand-name{font-size:18px}
   </div>
   <div class="wrap foot-bottom">
     <span>© 2026 Anima，本地优先的 AI 伙伴。</span>
-    <span>v1.1.0 · Windows 10 / 11</span>
+    <span id="footer-platform">v1.1.0 · Windows 10 / 11</span>
   </div>
 </footer>
 
@@ -722,6 +724,30 @@ function initSoul(canvas){
   }
 }
 document.querySelectorAll('canvas[data-palette]').forEach(initSoul);
+
+// ── 平台检测：不同系统显示对应的下载内容 ──────────────────────
+(function() {
+  const ua = navigator.userAgent || '';
+  const isMac = /Macintosh|MacIntel/.test(ua) && !/iPhone|iPad/.test(ua);
+  const isWin = /Windows/.test(ua);
+
+  const desc    = document.getElementById('dl-desc');
+  const actions = document.getElementById('dl-actions');
+  const footer  = document.getElementById('footer-platform');
+
+  if (isMac) {
+    if (desc) desc.textContent = 'macOS 版正在适配 Apple Silicon，内测即将开放。';
+    if (footer) footer.textContent = 'v1.1.0 · macOS 即将推出';
+    if (actions) actions.innerHTML =
+      '<button class="btn btn-gold" style="opacity:.55;cursor:default" disabled>macOS 版即将推出</button>' +
+      '<a class="btn btn-outline" style="margin-top:12px;display:inline-block" href="mailto:animaos@139.com?subject=macOS%E5%86%85%E6%B5%8B%E7%94%B3%E8%AF%B7">加入等待列表 →</a>';
+  } else if (!isWin) {
+    // 其他平台（Linux 等）
+    if (desc) desc.textContent = '当前支持 Windows 10 / 11，macOS 版即将推出。';
+    if (footer) footer.textContent = 'v1.1.0 · Windows 已上线 · macOS 即将推出';
+  }
+  // Windows：保持默认 HTML 不变
+})();
 </script>
 </body>
 </html>
