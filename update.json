@@ -1,18 +1,18 @@
 {
   "version": "1.1.6",
   "notes": "Anima v1.1.6 — 本地优先 AI 伙伴",
-  "pub_date": "2026-06-06T13:04:37Z",
+  "pub_date": "2026-06-06T14:34:21Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUTjJzN3E4WUh1TEZwZUFkS2ZSSlRkL25UWkQxd1pkZlhXeTBIcUV0WkFsZUFBU3c1Z0U1Mmp4OUhVT0p3Y09kVTdYZTVaMDBJK3RONnZVM3lUU1JrbWZFMkRCdVV6VGdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNzU1NjI0CWZpbGU6QW5pbWFfMS4xLjZfeDY0LXNldHVwLmV4ZQpMU05yR3A2WDAwN0dwNkVaNmxRZ3BQR1pleDFEMkljNW5RZnl3cDJnSzUwd0FWcS9YalNTRUljNmptVUVzZnArcU5JMUNlNnRWcStWeTVia1NheEVEZz09Cg==",
       "url": "https://github.com/chengshi0213-gif/anima-site/releases/download/v1.1.6/Anima_1.1.6_x64-setup.exe"
     },
     "darwin-aarch64": {
-      "signature": "",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUTjJzN3E4WUh1TENWYTZBRUhvclAvUzZsRityaFJqR2RyMFlnV3lGUFJyQnFBVnI3U1pIZ1J3N0xmQW1JRklaeW0rZXVBQldjR2Qxak9mVGt0V25saXo3MjZRYzVFMVFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNzU1NzU2CWZpbGU6QW5pbWFfYWFyY2g2NC5hcHAudGFyLmd6Cm5HNC9yTmRWSzV2RXR6K3JndFcrSW1kcThqK1dpdWwrWFByWDRCcGhoYXM3Z2VsS3hTMXB6T2xnMXNFUmh4SUhORGtDN2NQTXlORmJ6M2ptVGZhcEJRPT0K",
       "url": "https://github.com/chengshi0213-gif/anima-site/releases/download/v1.1.6/Anima_aarch64.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUTjJzN3E4WUh1TE1KQnkxY245RWYwczd1ZS85Ykx6SHdsblYyZTJLSkFuUG5SSERzWDJhRFpOcGR3VGcxSkRjU28rMzZZZGFsbElzdVYva3Rna3pNYkM4L1dGd2JqT1FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNzU1NzU5CWZpbGU6QW5pbWFfeDY0LmFwcC50YXIuZ3oKdmVwWVNlMTVwUXlHWkU0L2ZxMHYrM2s1Q2NLT1N2MUZpSlJENkMwbTNkVGVDR2orR3lyUFFKT0N6eHBnN1o0NUR3R2xDeHBISTBDbzhJZ1pRdXhiQ0E9PQo=",
       "url": "https://github.com/chengshi0213-gif/anima-site/releases/download/v1.1.6/Anima_x64.app.tar.gz"
     }
   }
