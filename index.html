@@ -456,12 +456,13 @@ footer .brand-name{font-family:"Noto Serif SC","Songti SC","STSong","SimSun",ser
       <div class="invite-panel reveal">
         <div>
           <h2>申请一枚结缘码</h2>
-          <p>Anima 还在邀请制里慢慢醒来。点一下按钮，给 Anima 的邮箱管家寄一封信，几分钟内会自动收到结缘码。</p>
+          <p>Anima 还在邀请制里慢慢醒来。留下你的邮箱，几分钟内会自动收到一枚结缘码。</p>
         </div>
-        <div class="invite-field">
-          <button class="btn btn-primary" data-mag onclick="applyInviteCode()">🪔 申请结缘码</button>
-        </div>
-        <p class="invite-hint" id="inviteHint">点击后会打开你的邮件客户端；保持邮件主题里的「结缘」二字，发送即可，由邮箱管家自动回信发码。</p>
+        <form class="invite-field" id="inviteForm" onsubmit="return submitInviteRequest(event)">
+          <input type="email" id="inviteEmail" placeholder="你的邮箱地址" required autocomplete="email" />
+          <button class="btn btn-primary" type="submit" data-mag id="inviteSubmitBtn">🪔 申请结缘码</button>
+        </form>
+        <p class="invite-hint" id="inviteHint">提交后会进入申请队列，由 Anima 的邮箱管家自动铸码回信，请耐心等待几分钟（邮件可能落入垃圾箱，记得看一眼）。</p>
       </div>
     </div>
   </section>
@@ -547,14 +548,46 @@ if (lamp) {
   });
 }
 
-// 「申请结缘码」收件邮箱（Anima 邮箱管家轮询此邮箱，主题含「结缘」即自动铸码回信）
-const APPLY_EMAIL = "animaos@139.com";
-function applyInviteCode(){
-  const subj = encodeURIComponent("申请 Anima 结缘码");
-  const body = encodeURIComponent("你好，我想认识 Anima，希望获得一枚结缘码。\n\n（这封邮件会被 Anima 的邮箱管家自动处理，请保持主题中的「结缘」二字。）");
+// 「申请结缘码」：把邮箱交给一个轻量云函数登记排队，
+// 真正的铸码+发信由 Anima 本机邮箱管家轮询处理并通过已验证可用的通道发出
+// （139 等国内邮箱会拒绝来自境外云服务器的直接发信请求，所以不能让云函数直接发信）。
+const APPLY_API = "https://anima-invite-api.vercel.app/api/apply-invite";
+
+async function submitInviteRequest(ev){
+  ev.preventDefault();
+  const input = document.getElementById('inviteEmail');
+  const btn = document.getElementById('inviteSubmitBtn');
   const hint = document.getElementById('inviteHint');
-  if (hint) hint.textContent = '已为你打开邮件客户端，发送后几分钟内会自动收到结缘码～';
-  window.location.href = `mailto:${APPLY_EMAIL}?subject=${subj}&body=${body}`;
+  const email = (input && input.value || '').trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (hint) hint.textContent = '请填写一个有效的邮箱地址～';
+    return false;
+  }
+  if (btn) { btn.disabled = true; btn.textContent = '提交中…'; }
+  if (hint) hint.textContent = '正在提交申请…';
+  try {
+    const r = await fetch(APPLY_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    const data = await r.json().catch(() => ({}));
+    if (r.ok && data && data.ok) {
+      if (data.already) {
+        if (hint) hint.textContent = '这个邮箱之前已经申请过啦，去收件箱（包括垃圾箱）翻一翻～';
+      } else {
+        if (hint) hint.textContent = '申请已收到！几分钟内会自动发码到你的邮箱，记得也看看垃圾箱～';
+      }
+      if (input) input.value = '';
+    } else {
+      if (hint) hint.textContent = '提交失败了，过一会儿再试试，或直接写信到 animaos@139.com（主题含「结缘」二字）～';
+    }
+  } catch (e) {
+    if (hint) hint.textContent = '网络好像开小差了，过一会儿再试试～';
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = '🪔 申请结缘码'; }
+  }
+  return false;
 }
 
 const VERT = `attribute vec2 p;void main(){gl_Position=vec4(p,0.0,1.0);}`;
