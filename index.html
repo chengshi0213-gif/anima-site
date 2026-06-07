@@ -455,16 +455,13 @@ footer .brand-name{font-family:"Noto Serif SC","Songti SC","STSong","SimSun",ser
     <div class="wrap">
       <div class="invite-panel reveal">
         <div>
-          <h2>申请一枚邀请码</h2>
-          <p>Anima 还在邀请制里慢慢醒来。留下邮箱，等下一批名额开放时，我们会把入口寄给你。</p>
+          <h2>申请一枚结缘码</h2>
+          <p>Anima 还在邀请制里慢慢醒来。点一下按钮，给 Anima 的邮箱管家寄一封信，几分钟内会自动收到结缘码。</p>
         </div>
-        <form class="invite-form" id="inviteForm">
-          <div class="invite-field">
-            <input id="inviteEmail" type="email" name="email" autocomplete="email" placeholder="你的邮箱" required>
-            <button class="btn btn-primary" type="submit">申请邀请码</button>
-          </div>
-          <p class="invite-hint" id="inviteHint">只用于发送邀请和版本通知。</p>
-        </form>
+        <div class="invite-field">
+          <button class="btn btn-primary" data-mag onclick="applyInviteCode()">🪔 申请结缘码</button>
+        </div>
+        <p class="invite-hint" id="inviteHint">点击后会打开你的邮件客户端；保持邮件主题里的「结缘」二字，发送即可，由邮箱管家自动回信发码。</p>
       </div>
     </div>
   </section>
@@ -550,22 +547,14 @@ if (lamp) {
   });
 }
 
-const inviteForm = document.getElementById('inviteForm');
-if (inviteForm) {
-  inviteForm.addEventListener('submit', event => {
-    event.preventDefault();
-    const email = document.getElementById('inviteEmail');
-    const hint = document.getElementById('inviteHint');
-    const value = email?.value.trim() || '';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-      if (hint) hint.textContent = '请先填一个可以收到邮件的邮箱。';
-      email?.focus();
-      return;
-    }
-    localStorage.setItem('anima-invite-email', value);
-    if (hint) hint.textContent = '已记录。下一批邀请开放时，会优先寄到这个邮箱。';
-    inviteForm.animate([{transform:'translateY(0)'},{transform:'translateY(-3px)'},{transform:'translateY(0)'}],{duration:340,easing:'ease-out'});
-  });
+// 「申请结缘码」收件邮箱（Anima 邮箱管家轮询此邮箱，主题含「结缘」即自动铸码回信）
+const APPLY_EMAIL = "animaos@139.com";
+function applyInviteCode(){
+  const subj = encodeURIComponent("申请 Anima 结缘码");
+  const body = encodeURIComponent("你好，我想认识 Anima，希望获得一枚结缘码。\n\n（这封邮件会被 Anima 的邮箱管家自动处理，请保持主题中的「结缘」二字。）");
+  const hint = document.getElementById('inviteHint');
+  if (hint) hint.textContent = '已为你打开邮件客户端，发送后几分钟内会自动收到结缘码～';
+  window.location.href = `mailto:${APPLY_EMAIL}?subject=${subj}&body=${body}`;
 }
 
 const VERT = `attribute vec2 p;void main(){gl_Position=vec4(p,0.0,1.0);}`;
