@@ -1,11 +1,11 @@
 {
-  "version": "1.1.8",
-  "notes": "Anima v1.1.8 — 修复后端启动崩溃 + 历史删除功能 + 邀请邮箱管家兼容性。\n\n注意：本版更换了更新签名密钥；如果你看到签名校验失败或没有收到更新提示，请手动下载本安装包覆盖安装一次，之后自动更新会恢复正常。",
-  "pub_date": "2026-06-07T05:26:16Z",
+  "version": "1.1.9",
+  "notes": "Anima v1.1.9 — 陪伴模式：灵体光球避让聊天内容、麦克风按钮迁入输入工具栏；Onboarding 名片化（自我介绍+头像上传合一）；网页申请结缘码改为排队制",
+  "pub_date": "2026-06-07T14:51:36Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTYnA2WnNqc2ZjTTM5OWJhT1FYNForT0JyblNhYlR3TmVNcWlRQWlrajlmMTIvR0lYblJFTjdNQmdSRVF0MVR5RkZQa3dxTTRSSWF0UmNJdk11MjJ6aFdxNzUzM004dmdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwODA5ODQ4CWZpbGU6QW5pbWFfMS4xLjhfeDY0LXNldHVwLmV4ZQpRdUhxbFJ1SW1Mdk9SNzBDVVlLR1hUaWhtQmhvQm1jbjZtQnFmTmhEVUlraG9zb0F1V2lCVkpaL0k2aElJVzF4QlZnNXEzNWZLMHlRcG02QUEyRm1EQT09Cg==",
-      "url": "https://github.com/chengshi0213-gif/anima-site/releases/download/v1.1.8/Anima_1.1.8_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTYnA2WnNqc2ZjTTBteEM2VFBpRW5iSzQ5VHNNcFVtWlRJT1pud1pkUEZ4am9lOXluNFFFei9BNXNRa0s2VVlDaWVpUnlBZWxWQmpuankyakpWZ3RsMUh4YkFISWtkSXc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwODQzNTkzCWZpbGU6QW5pbWFfMS4xLjlfeDY0LXNldHVwLmV4ZQppR3BIWTZEMTFObk9UVWthbFVqSnRjdFlCeEpOSEZKRkx3TWRZaFV5WmlpZ2FZcHc2aDVpZklMeXdyNHFQbXV1Tjh5QUdPUVp0bWRRRW4zRE51VU9Cdz09Cg==",
+      "url": "https://github.com/chengshi0213-gif/anima-site/releases/download/v1.1.9/Anima_1.1.9_x64-setup.exe"
     }
   }
 }
