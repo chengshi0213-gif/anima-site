@@ -1,19 +1,11 @@
 {
-  "version": "1.1.6",
-  "notes": "Anima v1.1.6 — 本地优先 AI 伙伴",
-  "pub_date": "2026-06-06T14:34:21Z",
+  "version": "1.1.8",
+  "notes": "Anima v1.1.8 — 修复后端启动崩溃 + 历史删除功能 + 邀请邮箱管家兼容性。\n\n注意：本版更换了更新签名密钥；如果你看到签名校验失败或没有收到更新提示，请手动下载本安装包覆盖安装一次，之后自动更新会恢复正常。",
+  "pub_date": "2026-06-07T05:26:16Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUTjJzN3E4WUh1TEZwZUFkS2ZSSlRkL25UWkQxd1pkZlhXeTBIcUV0WkFsZUFBU3c1Z0U1Mmp4OUhVT0p3Y09kVTdYZTVaMDBJK3RONnZVM3lUU1JrbWZFMkRCdVV6VGdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNzU1NjI0CWZpbGU6QW5pbWFfMS4xLjZfeDY0LXNldHVwLmV4ZQpMU05yR3A2WDAwN0dwNkVaNmxRZ3BQR1pleDFEMkljNW5RZnl3cDJnSzUwd0FWcS9YalNTRUljNmptVUVzZnArcU5JMUNlNnRWcStWeTVia1NheEVEZz09Cg==",
-      "url": "https://github.com/chengshi0213-gif/anima-site/releases/download/v1.1.6/Anima_1.1.6_x64-setup.exe"
-    },
-    "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUTjJzN3E4WUh1TENWYTZBRUhvclAvUzZsRityaFJqR2RyMFlnV3lGUFJyQnFBVnI3U1pIZ1J3N0xmQW1JRklaeW0rZXVBQldjR2Qxak9mVGt0V25saXo3MjZRYzVFMVFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNzU1NzU2CWZpbGU6QW5pbWFfYWFyY2g2NC5hcHAudGFyLmd6Cm5HNC9yTmRWSzV2RXR6K3JndFcrSW1kcThqK1dpdWwrWFByWDRCcGhoYXM3Z2VsS3hTMXB6T2xnMXNFUmh4SUhORGtDN2NQTXlORmJ6M2ptVGZhcEJRPT0K",
-      "url": "https://github.com/chengshi0213-gif/anima-site/releases/download/v1.1.6/Anima_aarch64.app.tar.gz"
-    },
-    "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUTjJzN3E4WUh1TE1KQnkxY245RWYwczd1ZS85Ykx6SHdsblYyZTJLSkFuUG5SSERzWDJhRFpOcGR3VGcxSkRjU28rMzZZZGFsbElzdVYva3Rna3pNYkM4L1dGd2JqT1FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwNzU1NzU5CWZpbGU6QW5pbWFfeDY0LmFwcC50YXIuZ3oKdmVwWVNlMTVwUXlHWkU0L2ZxMHYrM2s1Q2NLT1N2MUZpSlJENkMwbTNkVGVDR2orR3lyUFFKT0N6eHBnN1o0NUR3R2xDeHBISTBDbzhJZ1pRdXhiQ0E9PQo=",
-      "url": "https://github.com/chengshi0213-gif/anima-site/releases/download/v1.1.6/Anima_x64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTYnA2WnNqc2ZjTTM5OWJhT1FYNForT0JyblNhYlR3TmVNcWlRQWlrajlmMTIvR0lYblJFTjdNQmdSRVF0MVR5RkZQa3dxTTRSSWF0UmNJdk11MjJ6aFdxNzUzM004dmdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwODA5ODQ4CWZpbGU6QW5pbWFfMS4xLjhfeDY0LXNldHVwLmV4ZQpRdUhxbFJ1SW1Mdk9SNzBDVVlLR1hUaWhtQmhvQm1jbjZtQnFmTmhEVUlraG9zb0F1V2lCVkpaL0k2aElJVzF4QlZnNXEzNWZLMHlRcG02QUEyRm1EQT09Cg==",
+      "url": "https://github.com/chengshi0213-gif/anima-site/releases/download/v1.1.8/Anima_1.1.8_x64-setup.exe"
     }
   }
 }
